@@ -4,4 +4,30 @@
 // 클로저는 상대적인 개념.. 루틴 바깥에 있는 애들은 죄다 자유 변수임
 // 자유변수를 쓰는 이유는 이미 제공하고 있는 기능을 제공받기 위해서
 
+function solution(A) {
+    
+    
+    let num = 0;
+    return A.reduce((p=0,v) => {
+        const len = v.toString().length;
+        if (len === 2 || v < 0) {
+            return p + v
+        }
+    },0)
+}
+
+
+console.log(solution([1, 1000,10, -80, 91]))
+
+function phone(A) {
+    let removedStr = A.replace(/\s/g,'').replace(/\-/g,'');
+    const gen = removedStr.replace(/(...?)(?!.?$)/g, '$1-');
+    
+    return gen
+}
+// 004 448 555 583 6
+console.log(phone("00-44  48 2335555 8361"))
+
+
+
 
